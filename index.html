@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="cz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=8, initial-scale=1.0" />
+    <!--<meta name="referrer" content="no-referrer" /> -->
+
+    <title>Article maker✍🏻</title>
+    <link rel="icon" href="./public/Favicon.png" />
+
+    <link rel="stylesheet" href="./text-editor.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <button id="burgerMenu" class="burgerMenu">
+          <div class="burgerHolder">
+            <span class="burger topBun"></span>
+            <span class="burger patty"></span>
+            <span class="burger bottomBun"></span>
+          </div>
+        </button>
+        <button class="navBubble" id="navBubble1">
+          <input type="checkbox" id="navBubble1_checkbox" name="navBubble1_checkbox" />
+        </button>
+
+        <button class="navBubble" id="navBubble2"></button>
+        <button class="navBubble" id="navBubble3" title="upload JSON.file"></button>
+        <button class="navBubble" id="navBubble4" title="download JSON.file"></button
+        ><button class="navBubble" id="navBubble5"></button>
+      </nav>
+
+      <img class="header" src="./public/banner.png" />
+      <div id="weatherDiv">
+        <span
+          ><img src="./public/pin.png" />
+          <a
+            id="googleMap"
+            href="https://www.google.com/maps/"
+            target="_blank"
+            title="open Google Maps"
+          ></a
+        ></span>
+        <input
+          class="visibility"
+          type="text"
+          id="place"
+          name="place"
+          placeholder="place"
+          tabindex="1"
+        />
+        <div id="longitude" class="longlat visibility">---</div>
+        <div id="latitude" class="longlat visibility">---</div>
+        <div id="whisperer"></div>
+      </div>
+      <div id="previewImgHolder">
+        <div id="previewImg" class="img">
+          <span class="visibility">...add<br />preview</span>
+        </div>
+      </div>
+    </header>
+    <div id="articleHeader" class="visibility">
+      <div class="title">
+        <input type="text" id="title" name="title" placeholder="Title" tabindex="2" />
+      </div>
+      <hr />
+      <div class="date">
+        <span>
+          <input type="date" id="date" name="date" tabindex="3" />
+          <button id="dateOnOffButton" title="Disable Date in Title"></button
+        ></span>
+      </div>
+    </div>
+    <div id="errorMessage"><p>!!! Špatná url !!!</p></div>
+    <div id="errorMessageNormal"><p>!!! Špatná url !!!</p></div>
+    <div id="articleBody">
+      <div id="articlePart"></div>
+
+      <div id="addNew">
+        <div class="buttonLine"></div>
+        <div id="addBubbles">
+          <button class="bubbles" id="addText" data-type="text">text</button>
+          <button class="bubbles" id="addTextImg" data-type="textImg">txt+i</button>
+          <button class="bubbles" id="addImg" data-type="img">img</button>
+          <button class="bubbles" id="addGrid" data-type="grid">grid</button>
+          <button class="bubbles" id="addYT" data-type="yt">YT</button>
+          <button class="bubbles" id="addLink" data-type="link">link</button>
+        </div>
+        <input type="checkbox" id="lineCheckbox" tabindex="4" />
+      </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="./scripts/defineJS.js"></script>
+    <script src="./scripts/bubbleNav.js"></script>
+    <script src="./scripts/longlatAsync.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/addline.js"></script>
+    <script src="./scripts/localStorage.js"></script>
+  </body>
+</html>
