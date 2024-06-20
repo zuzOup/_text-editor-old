@@ -113,19 +113,44 @@ navBubble2.addEventListener("click", (e) => {
     root.style.removeProperty(`--button`);
 
     navBubble2.style.backgroundImage = 'url("./public/moon.png")';
-
-    /*
-    
-  */
   }
   localStorage.setItem("darkMode", JSON.stringify(darkMode));
 });
 
 const navBubble3 = document.getElementById("navBubble3");
 navBubble3.addEventListener("click", (e) => {
+  console.log(4);
+
+  article.innerHTML = "";
+
+  fetch("../Lorem_Ipsum.json")
+    .then((response) => response.json())
+    .then((json) => {
+      localStorage.setItem("all", json);
+
+      onLoadLocalStorage.dateLS();
+      onLoadLocalStorage.titleLS();
+      onLoadLocalStorage.placeLS();
+      onLoadLocalStorage.articleLS();
+      onLoadLocalStorage.preview();
+
+      const storage = JSON.parse(localStorage.getItem("all"));
+
+      if (storage.dateInTitle === false) {
+        const button = document.getElementById("dateOnOffButton");
+        button.title = "Enable Date in Title ";
+        button.classList.add("dateOnOffActive");
+
+        removeDate();
+      }
+    });
+
+  /*
+
   const input = document.createElement("input");
   input.type = "file";
   input.accept = "json";
+
 
   input.addEventListener("change", () => {
     const [file] = input.files;
@@ -147,7 +172,6 @@ navBubble3.addEventListener("click", (e) => {
 
         const storage = JSON.parse(localStorage.getItem("all"));
 
-        console.log(storage.dateInTitle);
         if (storage.dateInTitle === false) {
           const button = document.getElementById("dateOnOffButton");
           button.title = "Enable Date in Title ";
@@ -164,7 +188,7 @@ navBubble3.addEventListener("click", (e) => {
     }
   });
 
-  input.click();
+  input.click();*/
 });
 
 navBubble4.addEventListener("click", () => {
