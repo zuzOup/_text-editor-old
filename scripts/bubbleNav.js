@@ -123,7 +123,7 @@ navBubble3.addEventListener("click", (e) => {
 /*mock data*/
   article.innerHTML = "";
 
-  fetch("./_text-editor-old/Lorem_Ipsum.json")
+  fetch("./Lorem_Ipsum.json")
     .then((response) => response.json())
     .then((json) => {
 
