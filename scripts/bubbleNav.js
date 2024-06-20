@@ -127,8 +127,8 @@ navBubble3.addEventListener("click", (e) => {
     .then((response) => response.json())
     .then((json) => {
 
-      console.log(json)
-      localStorage.setItem("all", json);
+  
+      localStorage.setItem("all", JSON.stringify(json));
 
       onLoadLocalStorage.dateLS();
       onLoadLocalStorage.titleLS();
