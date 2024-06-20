@@ -123,7 +123,7 @@ navBubble3.addEventListener("click", (e) => {
 
   article.innerHTML = "";
 
-  fetch("../Lorem_Ipsum.json")
+  fetch("./Lorem_Ipsum.json")
     .then((response) => response.json())
     .then((json) => {
       localStorage.setItem("all", json);
