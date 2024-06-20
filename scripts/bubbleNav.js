@@ -126,6 +126,8 @@ navBubble3.addEventListener("click", (e) => {
   fetch("./_text-editor-old/Lorem_Ipsum.json")
     .then((response) => response.json())
     .then((json) => {
+
+      console.log(json)
       localStorage.setItem("all", json);
 
       onLoadLocalStorage.dateLS();
