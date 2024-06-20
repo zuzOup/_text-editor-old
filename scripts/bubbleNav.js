@@ -119,11 +119,11 @@ navBubble2.addEventListener("click", (e) => {
 
 const navBubble3 = document.getElementById("navBubble3");
 navBubble3.addEventListener("click", (e) => {
-  console.log(4);
-
+  
+/*mock data*/
   article.innerHTML = "";
 
-  fetch("./Lorem_Ipsum.json")
+  fetch("./_text-editor-old/Lorem_Ipsum.json")
     .then((response) => response.json())
     .then((json) => {
       localStorage.setItem("all", json);
